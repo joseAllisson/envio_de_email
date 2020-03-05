@@ -1,0 +1,21 @@
+.animation{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+
+
+    animation: anima 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anima{
+
+    0%, 100%{
+        transform: translate(-50%, 100%)
+    }
+
+    100%{
+        transform: translate(250%, -100%)
+    }
+
+}
