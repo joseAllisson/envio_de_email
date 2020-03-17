@@ -13,6 +13,7 @@ class Mensagem {
     private $para = null;
     private $assunto = null;
     private $mensagem = null;
+
     public $status = array('codigo_status' => null, 'descricao_status' => "" );
 
     public function __get($atributo){
@@ -40,6 +41,7 @@ $mensagem = new Mensagem();
 $mensagem->__set('para', $_POST['para']);
 $mensagem->__set('assunto', $_POST['assunto']);
 $mensagem->__set('mensagem', $_POST['mensagem']);
+$mensagem->__set('arquivo', $_FILES['arquivo']);
 
 // print_r($_POST);
 
@@ -69,7 +71,7 @@ try {
     // $mail->addBCC('bcc@example.com');
 
     //Attachments
-    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->addAttachment($_FILES['arquivo']['tmp_name'],  $_FILES['arquivo']['name']);       // Add attachments
    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content

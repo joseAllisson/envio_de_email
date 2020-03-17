@@ -27,7 +27,7 @@
       			<div class="col-md-12">
   				
 					<div class="card-body font-weight-bold">
-						<form action="processa_envio.php" method="post">
+						<form action="processa_envio.php" method="post" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="para">Para</label>
 								<input name="para" type="text" class="form-control" id="para" placeholder="jose@dominio.com.br">
@@ -41,6 +41,11 @@
 							<div class="form-group">
 								<label for="mensagem">Mensagem</label>
 								<textarea name="mensagem" class="form-control" id="mensagem"></textarea>
+							</div>
+
+							<div class="form-group">
+								<label for="arquivo">Arquivo</label>
+								<input name="arquivo" type="file" class="form-control" id="arquivo">
 							</div>
 
 							<button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>
